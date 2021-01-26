@@ -10,7 +10,7 @@ class MoneyTest < Minitest::Test
   end
 
   def test_earn_money
-    skip
+    # skip
     money = Money.new
     money.earn(20)
     assert_equal 20, money.amount
@@ -19,7 +19,7 @@ class MoneyTest < Minitest::Test
   end
 
   def test_spend_money
-    skip
+    # skip
     money = Money.new
     money.earn(50)
     money.spend(12)
@@ -29,11 +29,13 @@ class MoneyTest < Minitest::Test
   end
 
   def test_cant_spend_money_that_you_dont_have
-    skip
+    # skip
     money = Money.new
     money.earn(75)
     money.spend(75)
     assert_equal "You can't spend what you don't have", money.spend(12)
+
+    # require "pry"; binding.pry
     assert_equal 0, money.amount
   end
 end
